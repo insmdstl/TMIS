@@ -1,0 +1,10 @@
+UPDATE:
+
+/var/lib/iHRIS/lib/4.3.3/ihris-train/templates/en_US/form_education.html
+/var/lib/iHRIS/lib/4.3.3/ihris-train/templates/en_US/view_education.html
+
+Add:
+<span type="form" name="education:academic_institution" showhead="default"></span>
+
+Comment:
+<!--<span type="form" name="education:school" showhead="default"></span>-->

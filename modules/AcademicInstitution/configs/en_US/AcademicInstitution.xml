@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="AcademicInstitution" path="/I2CE">
+  <metadata>
+    <version>4.3.0</version>
+  </metadata>
+  <configurationGroup name="AcademicInstitution" path="/I2CE" locale="en_US">
+    <version>4.3.0</version>
+    <configurationGroup name="tasks" path="/I2CE/tasks/task_description" locale="en_US">
+      <configuration name="can_edit_database_list_academic_institution" locale="en_US">
+        <value>Edit the Academic Institution list</value>
+      </configuration>
+      <configuration name="can_view_database_list_academic_institution" locale="en_US">
+        <value>View the Academic Institution list</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="forms" path="/modules/forms">
+      <configurationGroup name="forms">
+        <configurationGroup name="academic_institution">
+          <configuration name="display" values="single" locale="en_US">
+            <value>Academic Institution</value>
+          </configuration>
+        </configurationGroup>
+		<configurationGroup name="formClasses">
+        <configurationGroup name="iHRIS_AcademicInstitution">
+          <configurationGroup name="fields">
+            <configurationGroup name="location">
+              <configuration name="headers" type="delimited" locale="en_US">
+                <value>default:Location</value>
+              </configuration>
+            </configurationGroup>
+
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

@@ -1,0 +1,55 @@
+<?xml version="1.0"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="EducationMore">
+  <metadata>
+    <displayName>iHRIS Person Education More</displayName>
+    <category>HRH2030 Customization</category>
+    <description>Adding Institution Dropdown to Education and Remove the Text Box for Institution Name</description>
+    <creator>HRH2030 Timor-Leste</creator>
+    <version>4.3.0</version>
+    <path name="configs">
+      <value>./configs</value>
+    </path>
+    <requirement name="Person">
+      <atLeast version="4.1" />
+    </requirement>
+    <path name="classes">
+      <value>./lib</value>
+    </path>
+    <path name="templates">
+      <value>./templates</value>
+    </path>
+    <priority>150</priority>
+  </metadata>
+  <configurationGroup name="EducationMore" path="/I2CE"> 
+    <configurationGroup name="forms" path="/modules/forms/formClasses">
+        
+		<configurationGroup name="iHRIS_Education">
+          <version>4.1.1</version>
+          <displayName>Configuration for the class 'iHRIS_Education'</displayName>
+          <configuration name="extends">
+            <displayName>The class this form extends</displayName>
+            <value>I2CE_Form</value>
+          </configuration>
+          
+		  <configurationGroup name="fields">
+            <displayName>The fields defined for this form</displayName>
+
+            <configurationGroup name="academic_institution">
+              <displayName>The field 'academic_institution'</displayName>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>MAP</value>
+              </configuration>
+              <configuration name="headers" type="delimited" locale="en_US">
+                <displayName>The headers for this field.</displayName>
+                <value>default:Institution</value>
+              </configuration>
+            </configurationGroup>
+			</configurationGroup> 
+            
+        </configurationGroup>
+		
+    </configurationGroup>
+   </configurationGroup>
+</I2CEConfiguration>

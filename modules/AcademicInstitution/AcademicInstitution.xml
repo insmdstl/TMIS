@@ -1,0 +1,144 @@
+<?xml version="1.0"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="AcademicInstitution">
+  <metadata>
+    <displayName>iHRIS Academic Institution</displayName>
+    <className>iHRIS_Module_AcademicInstitution</className>
+    <classification>Application Component</classification>
+	<category>HRH2030 Customization</category>
+    <description>Academic Institution Information Form</description>
+    <creator>HRH2030 Timor-Leste</creator>
+    <version>4.3.0</version>
+    <path name="configs">
+      <value>./configs</value>
+    </path>
+    <path name="classes">
+      <value>./lib</value>
+    </path>
+    <path name="templates">
+      <value>./templates</value>
+    </path>
+    <requirement name="forms-storage">
+      <atLeast version="4.1.8.0" />
+    </requirement>
+    <priority>150</priority>
+  </metadata>
+  <configurationGroup name="AcademicInstitution" path="/I2CE">
+  
+  
+    <configurationGroup name="tasks" path="/I2CE/tasks/task_description" locale="en_US">
+      <configuration name="can_edit_database_list_academic_institution" locale="en_US">
+        <version>4.1.0.1</version>
+        <value>Edit the Academic Institution list</value>
+      </configuration>
+      <configuration name="can_view_database_list_academic_institution" locale="en_US">
+        <version>4.1.0.1</version>
+        <value>View the Academic Institution list</value>
+      </configuration>
+    </configurationGroup>
+	
+	
+    <configurationGroup name="tasks_trickle_down" path="/I2CE/tasks/task_trickle_down/">
+      <version>4.1.6.0</version>
+      <configuration name="can_edit_database_list_academic_institution" values="many">
+        <value>can_edit_database_lists</value>
+        <value>can_view_database_list_academic_institution</value>
+      </configuration>
+      <configuration name="can_view_database_list_academic_institution" values="many">
+        <value>can_view_database_lists</value>
+      </configuration>
+      <configuration name="can_edit_all_database_lists" values="many">
+        <value>can_edit_database_list_academic_institution</value>
+      </configuration>
+      <configuration name="can_view_all_database_lists" values="many">
+        <value>can_view_database_list_academic_institution</value>
+      </configuration>
+    </configurationGroup>
+	
+	
+    <configurationGroup name="forms" path="/modules/forms">
+      <configurationGroup name="forms">
+        <version>4.1.0.1</version>
+        <configurationGroup name="academic_institution">
+          <displayName>Academic Institution</displayName>
+          <description>The Academic Institution Form</description>
+          <configuration name="class" values="single">
+            <displayName>Class Name</displayName>
+            <description>The name of the class providing the form</description>
+            <value>iHRIS_AcademicInstitution</value>
+          </configuration>
+          <configuration name="display" values="single" locale="en_US">
+            <displayName>Display name</displayName>
+            <description>The display name for this form</description>
+            <value>Academic Institution</value>
+          </configuration>
+          <configuration name="storage" values="single">
+            <displayName>Form Storage</displayName>
+            <description>The form storage to use for this form</description>
+            <version>4.1.8.0</version>
+            <value>magicdata</value>
+          </configuration>
+        </configurationGroup>
+        <!-- Academic Institution -->
+      </configurationGroup>
+      <!-- end of  forms-->
+	  
+	  <configurationGroup name="formClasses">
+        <displayName>Form Class Configuration</displayName>
+        <configurationGroup name="iHRIS_AcademicInstitution">
+          <version>4.1.1.5</version>
+          <displayName>Configuration for the class 'iHRIS_AcademicInstitution'</displayName>
+          <configuration name="extends">
+            <displayName>The class this form extends</displayName>
+            <value>I2CE_SimpleList</value>
+          </configuration>
+          <configurationGroup name="fields">
+            <displayName>The fields defined for this form</displayName>
+            
+			<configurationGroup name="location">
+              <displayName>The field 'location'</displayName>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>MAP</value>
+              </configuration>
+              <configurationGroup name="meta">
+                <configuration name="form" values="many">
+                  <value>county</value>
+                  <value>district</value>
+                </configuration>
+                <configurationGroup name="limits">
+                  <configurationGroup name="default">
+                    <configurationGroup name="country">
+                      <configuration name="operator">
+                        <value>FIELD_LIMIT</value>
+                      </configuration>
+                      <configuration name="field">
+                        <value>location</value>
+                      </configuration>
+                      <configuration name="style">
+                        <value>yes</value>
+                      </configuration>
+                    </configurationGroup>
+                  </configurationGroup>
+                </configurationGroup>
+                <configurationGroup name="display">
+                  <configurationGroup name="default">
+                    <configuration name="fields">
+                      <value>county:district:[region]:country</value>
+                    </configuration>
+                  </configurationGroup>
+                </configurationGroup>
+              </configurationGroup>
+              <configuration name="headers" type="delimited" values="many" locale="en_US">
+                <displayName>The headers for this field.</displayName>
+                <value>default:Location</value>
+              </configuration>
+            </configurationGroup>          
+            
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+	  
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

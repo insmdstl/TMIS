@@ -1,0 +1,123 @@
+<?xml version="1.0"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="PersonInstanceAdditional">
+  <metadata>
+    <displayName>iHRIS Person Instance Additional</displayName>
+    <className>iHRIS_Module_PersonInstance</className>
+    <category>HRH2030 Customization</category>
+    <description>Adding Certificate and FUAT Information to Person Instance</description>
+    <creator>HRH2030 Timor-Leste</creator>
+    <version>4.3.0</version>
+    <path name="classes">
+      <value>./lib</value>
+    </path>
+    <path name="configs">
+      <value>./configs</value>
+    </path>
+    <path name="templates">
+      <value>./templates</value>
+    </path>
+    <requirement name="ReferenceField">
+      <atLeast version="4.3" />
+      <lessThan version="4.4" />
+    </requirement>
+    <requirement name="CustomReports-Selector">
+      <atLeast version="4.3" />
+      <lessThan version="4.4" />
+    </requirement>
+    <requirement name="Float">
+      <atLeast version="4.3" />
+      <lessThan version="4.4" />
+    </requirement>
+    <priority>350</priority>
+  </metadata>
+  <configurationGroup name="PersonInstanceAdditional" path="/I2CE">
+    <version>4.1.1.2</version>
+	
+    <configurationGroup name="forms" path="/modules/forms/formClasses">  
+    
+    <configurationGroup name="iHRIS_PersonInstance">
+          <version>4.1.1.2</version>
+          <displayName>Configuration for the class 'iHRIS_PersonInstance'</displayName>
+          <configuration name="extends">
+            <displayName>The class this form extends</displayName>
+            <value>I2CE_Form</value>
+          </configuration>
+          <configurationGroup name="fields">
+            <displayName>The fields defined for this form.</displayName>
+            <version>4.1.3.2</version>
+
+			<configurationGroup name="certificate">
+              <displayName>The fields 'Certificate'</displayName>
+              <version>4.1.3.5</version>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>DOCUMENT</value>
+              </configuration>
+              <configuration name="headers" type="delimited">
+                <displayName>The headers for this field.</displayName>
+                <value>default:Training Certificate</value>
+              </configuration>
+            </configurationGroup>
+
+            <configurationGroup name="fuat_result">
+              <displayName>The fields 'FUAT Result'</displayName>
+              <version>4.1.3.5</version>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>MAP</value>
+              </configuration>
+              <configuration name="headers" type="delimited">
+                <displayName>The headers for this field.</displayName>
+                <value>default:FUAT Result</value>
+              </configuration>
+            </configurationGroup>
+			
+			<configurationGroup name="fuat_date">
+              <displayName>The fields 'FUAT Date'</displayName>
+              <version>4.1.3.5</version>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>DATE_YMD</value>
+              </configuration>
+              <configuration name="headers" type="delimited">
+                <displayName>The headers for this field.</displayName>
+                <value>default:FUAT Date</value>
+              </configuration>
+            </configurationGroup>
+			
+			<configurationGroup name="fuat_document">
+              <displayName>The fields 'FUAT Document'</displayName>
+              <version>4.1.3.5</version>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>DOCUMENT</value>
+              </configuration>
+              <configuration name="headers" type="delimited">
+                <displayName>The headers for this field.</displayName>
+                <value>default:FUAT Document</value>
+              </configuration>
+            </configurationGroup>
+			
+			<configurationGroup name="fuat_point">
+              <displayName>The fields 'FUAT Point'</displayName>
+              <version>4.1.3.5</version>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>INT</value>
+              </configuration>
+              <configuration name="headers" type="delimited">
+                <displayName>The headers for this field.</displayName>
+                <value>default:FUAT Point</value>
+              </configuration>
+            </configurationGroup>
+
+          </configurationGroup>
+          <!-- fields -->
+      </configurationGroup>
+	  <!-- PersonInstance -->
+	</configurationGroup>	
+      <!-- End /modules/forms/formClasses -->
+  </configurationGroup>
+  <!-- PersonInstanceAdditional -->
+</I2CEConfiguration>
