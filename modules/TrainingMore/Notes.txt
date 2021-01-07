@@ -1,0 +1,8 @@
+UPDATE:
+
+1. /var/lib/iHRIS/sites/train/modules/TrainingAdditional/templates/en_US/
+1.a. lists_form_training.html
+1.b. view_form_training.html
+
+ADD:
+<span type="form" name="training:training_area" showhead="default"></span>

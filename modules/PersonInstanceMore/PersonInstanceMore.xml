@@ -1,0 +1,84 @@
+<?xml version="1.0"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="PersonInstanceMore">
+  <metadata>
+    <displayName>Person Instance More Fields</displayName>
+    <className>iHRIS_Module_PersonInstance</className>
+    <category>HRH2030 Customization</category>
+    <description>Adding Pre and Post Tests Info</description>
+    <creator>HRH2030 Timor-Leste</creator>
+    <version>4.3.0</version>
+    <path name="classes">
+      <value>./lib</value>
+    </path>
+    <path name="configs">
+      <value>./configs</value>
+    </path>
+    <path name="templates">
+      <value>./templates</value>
+    </path>
+    <requirement name="ReferenceField">
+      <atLeast version="4.3" />
+      <lessThan version="4.4" />
+    </requirement>
+    <requirement name="CustomReports-Selector">
+      <atLeast version="4.3" />
+      <lessThan version="4.4" />
+    </requirement>
+    <requirement name="Float">
+      <atLeast version="4.3" />
+      <lessThan version="4.4" />
+    </requirement>
+    <priority>350</priority>
+  </metadata>
+  <configurationGroup name="PersonInstanceMore" path="/I2CE">
+    <version>4.1.1.2</version>
+	
+    <configurationGroup name="forms" path="/modules/forms/formClasses">  
+    
+    <configurationGroup name="iHRIS_PersonInstance">
+          <version>4.1.1.2</version>
+          <displayName>Configuration for the class 'iHRIS_PersonInstance'</displayName>
+          <configuration name="extends">
+            <displayName>The class this form extends</displayName>
+            <value>I2CE_Form</value>
+          </configuration>
+          <configurationGroup name="fields">
+            <displayName>The fields defined for this form.</displayName>
+            <version>4.1.3.2</version>
+
+       	    <configurationGroup name="pre_test">
+              <displayName>The fields 'Pre-test'</displayName>
+              <version>4.1.3.5</version>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>INT</value>
+              </configuration>
+              <configuration name="headers" type="delimited">
+                <displayName>The headers for this field.</displayName>
+                <value>default:Pre-Test Point</value>
+              </configuration>
+            </configurationGroup>
+
+	    <configurationGroup name="post_test">
+              <displayName>The fields 'Post-test'</displayName>
+              <version>4.1.3.5</version>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>INT</value>
+              </configuration>
+              <configuration name="headers" type="delimited">
+                <displayName>The headers for this field.</displayName>
+                <value>default:Post-Test Point</value>
+              </configuration>
+            </configurationGroup>
+
+            </configurationGroup>
+
+          </configurationGroup>
+          <!-- fields -->
+      </configurationGroup>
+	  <!-- PersonInstance -->
+	</configurationGroup>	
+      <!-- End /modules/forms/formClasses -->
+</I2CEConfiguration>

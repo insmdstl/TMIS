@@ -1,0 +1,64 @@
+<?xml version="1.0"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="PersonAdditional">
+ <metadata>
+   <displayName>iHRIS Person Additional</displayName>
+   <category>HRH2030 Customization</category>
+   <description>Adding PMIS# and Full Name</description>
+   <creator>HRH2030 Timor-Leste</creator>
+   <version>4.3.0</version>
+   <requirement name='Person'>
+     <atLeast version='4.0'/>
+   </requirement>
+   <path name='templates'>
+      <value>./templates</value>
+   </path>
+   <priority>370</priority>
+ </metadata>
+
+    <configurationGroup name="person"  path="/">
+        <configurationGroup name="forms" path="/modules/forms/formClasses">
+            <configurationGroup name="iHRIS_Person">
+                <displayName>Configuration for the class 'iHRIS_Person'</displayName>
+                <configuration name="extends">
+                    <displayName>The class this form extends</displayName>
+                    <value>I2CE_Form</value>
+                </configuration>
+                
+                <configurationGroup name="fields">
+                    <displayName>The fields defined for this form</displayName>
+                    
+					<configurationGroup name="pmis">
+                        <displayName>The field 'id_type'</displayName>
+                        <version>3.2.5</version>
+                        <configuration name="formfield">
+                            <displayName>The form field type</displayName>
+                            <value>STRING_LINE</value>
+                        </configuration>
+                        <configuration name="headers" type="delimited" locale="en_US">
+                            <displayName>The headers for this field.</displayName>
+                            <version>3.2.1</version>
+                            <value>default:PMIS #</value>
+                        </configuration>                        
+                    </configurationGroup> 
+					
+					<configurationGroup name="fullname">
+                        <displayName>The field 'fullname'</displayName>
+                        <version>3.2.5</version>
+                        <configuration name="formfield">
+                            <displayName>The form field type</displayName>
+                            <value>STRING_LINE</value>
+                        </configuration>
+                        <configuration name="headers" type="delimited" locale="en_US">
+                            <displayName>The headers for this field.</displayName>
+                            <version>3.2.1</version>
+                            <value>default:Full Name</value>
+                        </configuration>                        
+                    </configurationGroup>        		 
+
+                </configurationGroup>    
+            </configurationGroup>
+        </configurationGroup>
+    </configurationGroup>
+</I2CEConfiguration>
+

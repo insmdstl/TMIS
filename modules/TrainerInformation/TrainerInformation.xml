@@ -1,0 +1,140 @@
+<?xml version="1.0"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="TrainerInformation">
+  <metadata>
+    <displayName>iHRIS Trainer Information</displayName>
+    <className>iHRIS_Module_TrainerInformation</className>
+    <classification>Application Component</classification>
+	<category>HRH2030 Customization</category>
+    <description>Trainer Information Form</description>
+    <creator>HRH2030 Timor-Leste</creator>
+    <version>4.3.0</version>
+    <path name="configs">
+      <value>./configs</value>
+    </path>
+    <path name="classes">
+      <value>./lib</value>
+    </path>
+    <path name="templates">
+      <value>./templates</value>
+    </path>
+    <requirement name="forms-storage">
+      <atLeast version="4.1.8.0" />
+    </requirement>
+    <priority>150</priority>
+  </metadata>
+  <configurationGroup name="TrainerInformation" path="/I2CE">
+  
+  
+    <configurationGroup name="tasks" path="/I2CE/tasks/task_description" locale="en_US">
+      <configuration name="can_edit_database_list_trainer_information" locale="en_US">
+        <version>4.1.0.1</version>
+        <value>Edit the Trainer Information list</value>
+      </configuration>
+      <configuration name="can_view_database_list_trainer_information" locale="en_US">
+        <version>4.1.0.1</version>
+        <value>View the Trainer Information list</value>
+      </configuration>
+    </configurationGroup>
+	
+	
+    <configurationGroup name="tasks_trickle_down" path="/I2CE/tasks/task_trickle_down/">
+      <version>4.1.6.0</version>
+      <configuration name="can_edit_database_list_trainer_information" values="many">
+        <value>can_edit_database_lists</value>
+        <value>can_view_database_list_trainer_information</value>
+      </configuration>
+      <configuration name="can_view_database_list_trainer_information" values="many">
+        <value>can_view_database_lists</value>
+      </configuration>
+      <configuration name="can_edit_all_database_lists" values="many">
+        <value>can_edit_database_list_trainer_information</value>
+      </configuration>
+      <configuration name="can_view_all_database_lists" values="many">
+        <value>can_view_database_list_trainer_information</value>
+      </configuration>
+    </configurationGroup>
+	
+	
+    <configurationGroup name="forms" path="/modules/forms">
+      <configurationGroup name="forms">
+        <version>4.1.0.1</version>
+        <configurationGroup name="trainer_information">
+          <displayName>Trainer Information</displayName>
+          <description>The Trainer Information Form</description>
+          <configuration name="class" values="single">
+            <displayName>Class Name</displayName>
+            <description>The name of the class providing the form</description>
+            <value>iHRIS_TrainerInformation</value>
+          </configuration>
+          <configuration name="display" values="single" locale="en_US">
+            <displayName>Display name</displayName>
+            <description>The display name for this form</description>
+            <value>Trainer Information</value>
+          </configuration>
+          <configuration name="storage" values="single">
+            <displayName>Form Storage</displayName>
+            <description>The form storage to use for this form</description>
+            <version>4.1.8.0</version>
+            <value>magicdata</value>
+          </configuration>
+        </configurationGroup>
+        <!-- TrainingVenue -->
+      </configurationGroup>
+      <!-- end of  forms-->
+	  
+	  <configurationGroup name="formClasses">
+        <displayName>Form Class Configuration</displayName>
+        <configurationGroup name="iHRIS_TrainerInformation">
+          <version>4.1.1.5</version>
+          <displayName>Configuration for the class 'iHRIS_TrainerInformation'</displayName>
+          <configuration name="extends">
+            <displayName>The class this form extends</displayName>
+            <value>I2CE_SimpleList</value>
+          </configuration>
+          <configurationGroup name="fields">
+            <displayName>The fields defined for this form</displayName>
+            
+			<configurationGroup name="phone_number">
+              <displayName>The field 'phone_number'</displayName>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>STRING_LINE</value>
+              </configuration>
+              <configuration name="headers" type="delimited" locale="en_US">
+                <displayName>The headers for this field.</displayName>
+                <value>default:Phone Number</value>
+              </configuration>
+            </configurationGroup>
+            
+            <configurationGroup name="alternate_phone_number">
+              <displayName>The field 'alternate_phone_number'</displayName>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>STRING_LINE</value>
+              </configuration>
+              <configuration name="headers" type="delimited" locale="en_US">
+                <displayName>The headers for this field.</displayName>
+                <value>default:Alternate Phone Number</value>
+              </configuration>
+            </configurationGroup>
+			
+			<configurationGroup name="email">
+              <displayName>The field 'email'</displayName>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>STRING_LINE</value>
+              </configuration>
+              <configuration name="headers" type="delimited" locale="en_US">
+                <displayName>The headers for this field.</displayName>
+                <value>default:Email</value>
+              </configuration>
+            </configurationGroup>
+            
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+	  
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

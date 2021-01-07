@@ -1,0 +1,3 @@
+UPDATE:
+1. Form: /var/lib/iHRIS/sites/train/modules/PersonAdditional/templates/en_US/form_person_base.html
+2. View: /var/lib/iHRIS/sites/train/modules/TrainPositionAdditional/templates/en_US/view_position.html
