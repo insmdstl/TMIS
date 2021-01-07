@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="TrainingProviderRemoved">
+  <metadata>
+    <displayName>iHRIS Training Provider Removed</displayName>
+    <category>HRH2030 Customization</category>
+    <description>Removing Intake Capacity Field</description>
+    <creator>HRH2030 Timor-Leste</creator>
+    <version>4.3.0</version>
+    <requirement name='Training'>
+       <atLeast version='4.0'/>
+    </requirement>
+    <path name="templates">
+      <value>./templates</value>
+    </path>
+    <priority>370</priority>
+  </metadata>           
+  <configurationGroup name="trainingprovider"  path="/">
+        <configurationGroup name="forms" path="/modules/forms/formClasses">
+            <configurationGroup name="iHRIS_TrainingProvider">
+          <version>4.2.0.2</version>
+          <displayName>Configuration for the class 'iHRIS_Training'</displayName>
+          <configuration name="extends">
+            <displayName>The class this form extends</displayName>
+            <value>I2CE_SimpleList</value>
+          </configuration>
+		  
+          <configurationGroup name="fields">
+            <displayName>The fields defined for this form</displayName>
+            <version>4.1.1.3</version>			            
+
+          </configurationGroup>
+          <!-- fields -->
+        </configurationGroup>
+        <!-- iHRIS_Training -->
+      </configurationGroup>
+    <!-- end of  forms-->
+	</configurationGroup>
+</I2CEConfiguration>
